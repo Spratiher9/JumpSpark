@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "{{cookiecutter.project_name}}"
+version = "0.1.0"
+description = "{{cookiecutter.project_description}}"
+authors = ["{{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^{{cookiecutter.python_version}}"
+pyspark = "^3.0.0"
+quinn = "^0.5.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^5.2"
+chispa = "^0.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

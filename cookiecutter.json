@@ -1,0 +1,11 @@
+{
+  "project_name": "new-project",
+  "package_name": "{{cookiecutter.project_name|lower|replace(' ', '_')|replace('-', '_')}}",
+  "project_version": "0.1.0",
+  "full_name": "Your Name",
+  "email": "Your Email",
+  "github_username": "github_username",
+  "project_description": "This is a pyspark project",
+  "python_version": "3.9.6",
+  "line_length": "88"
+}

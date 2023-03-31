@@ -1,0 +1,8 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+tests/__pycache__/*.pyc
+*.py[cod]
+
+.pytest_cache/
+dist/
+angelou.egg-info/
