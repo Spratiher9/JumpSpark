@@ -14,9 +14,9 @@ def test_compare_dataframes(spark):
     df2 = spark.createDataFrame(
         [
             ("Alice", 1500),
-            ("Bob", 200),
+            ("Bob", 1000),
             ("Charlie", 150),
-            ("Dexter", 10)
+            ("Dexter", 100)
         ],
         ["name", "count"]
     )
