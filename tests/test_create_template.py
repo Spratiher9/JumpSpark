@@ -33,6 +33,22 @@ def test_run_cookiecutter_result(cookies):
         assert "project_name" not in readme
 
 
+def test_run_cookiecutter_result_with_hyphen_in_projectname(cookies):
+    """Runs cookiecutter and checks if the appropriate package names are initialized"""
+    project_name = "random-project"
+    package_name = "random_project"
+    result = cookies.bake(
+        extra_context={"project_name": project_name}
+
+    )
+    project_path_tests = result.project_path/"tests"/"test_transformations.py"
+    assert project_path_tests.is_file()
+    with open(project_path_tests,"r") as f:
+        test_transformations =f.read()
+        assert project_name not in test_transformations
+        assert package_name in test_transformations
+
+
 def test_cookiecutter_generated_files(cookies):
     """tests the generated files names make sense"""
     re_bad = re.compile(r"{{\s?cookiecutter\..*?}}")
@@ -42,7 +58,6 @@ def test_cookiecutter_generated_files(cookies):
         re_bad.search(str(file_path)) is None
         for file_path in result.project_path.glob("*")
     )
-
 
 def test_cookiecutter_make_qa(cookies):
     """runs tests on the generated dir"""
